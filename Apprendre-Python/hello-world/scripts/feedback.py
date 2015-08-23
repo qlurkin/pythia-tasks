@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # Feedback script
 
+import json
 import os
 
 # Retrieve task id
@@ -32,4 +33,4 @@ if (not hasError) and os.path.exists(stdout):
             if content == '':
                 output['feedback']['message'] = '<p>Your program do not print anything.</p>'
 
-print(output)
+print(json.dumps(output))
