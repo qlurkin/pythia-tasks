@@ -32,7 +32,7 @@ if (not hasError) and os.path.exists(stdout):
             output['status'] = 'success'
             output['feedback']['score'] = 1
         # Missing line break
-        elif '\n' not in content:
+        elif content.lower().startswith('hello world'):
             output['feedback']['message'] = '<p>Vous devez écrire la phrase <code>Hello World!</code> sur deux lignes.</p>'
         # Missing final exclamation mark
         elif content == 'Hello\nWorld':
