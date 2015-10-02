@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+# Course: Apprendre Python
+# Problem: Hello World
 # Preprocessing script
 
 import json

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# Executio script
+# Course: Apprendre Python
+# Problem: Hello World
+# Execution script
 
 import sys
 
@@ -21,6 +23,6 @@ except Exception as e:
 
 # Execute student's code
 try:
-    q1.printHelloWorld()
+    q1.printhelloworld()
 except Exception as e:
     print(e, file=sys.stderr)

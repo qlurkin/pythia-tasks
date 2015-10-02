@@ -2,5 +2,5 @@
 # Course: Apprendre Python
 # Problem: Hello World
 
-def printHelloWorld():
+def printhelloworld():
 @    @f1@@
