@@ -27,11 +27,16 @@ stdout = '/tmp/work/output/stdout'
 if (not hasError) and os.path.exists(stdout):
     with open(stdout, 'r') as file:
         content = file.read().rstrip()
+        # Good answer
         if content == 'Je suis un as de la programmation.':
             output['status'] = 'success'
             output['feedback']['score'] = 1
+        # Missing final point
         elif content == 'Je suis un as de la programmation':
             output['feedback']['message'] = '<p>Vous avez oublié le point en fin de phrase.</p>'
+        # Missing capital letter
+        elif content.lower().startswith('je suis un as de la programmation'):
+            output['feedback']['message'] = '<p>Attention, la différence entre majuscule et minuscule est importante.</p>'
         else:
             output['feedback'] = {'score': 0, 'example': {'expected': 'Je suis un as de la programmation.', 'actual': content}}
             if content == '':
