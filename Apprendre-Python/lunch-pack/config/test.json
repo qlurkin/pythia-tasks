@@ -1,0 +1,9 @@
+{
+  "argc": 3,
+  "predefined": [],
+  "random": {
+    "n": 5,
+    "args": ["int(1,12)", "int(1,5)", "int(1,5)"]
+  },
+  "code": "def sum(sandwich, beverage, dessert):\n    return 17 * (sandwich + 2 * beverage + dessert)"
+}
