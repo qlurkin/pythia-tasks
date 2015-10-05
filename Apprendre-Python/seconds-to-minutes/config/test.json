@@ -1,0 +1,9 @@
+{
+  "argc": 1,
+  "predefined": [],
+  "random": {
+    "n": 5,
+    "args": ["int(1,3599)"]
+  },
+  "code": "def simplify(time):\n    return (time // 60, time % 60)"
+}
