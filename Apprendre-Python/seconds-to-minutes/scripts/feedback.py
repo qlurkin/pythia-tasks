@@ -50,6 +50,7 @@ if not hasError:
     config = config['predefined']
   (verdict, feedback) = TaskFeedbackSuite(config).generate()
   output['feedback'] = feedback
+  output['feedback']['score'] = feedback['stats']['succeeded'] / feedback['stats']['total']
   output['status'] = 'success' if verdict else 'failed'
 
 print(json.dumps(output))
