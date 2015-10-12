@@ -20,4 +20,4 @@ pythia.fillSkeletons('/task/skeleton', '/tmp/work', input['fields'])
 
 # Save task id
 with open('/tmp/work/tid', 'w', encoding='utf-8') as file:
-  file.write(input['tid'])
+    file.write(input['tid'])

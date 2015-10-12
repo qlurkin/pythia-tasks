@@ -22,13 +22,13 @@ except Exception as e:
     sys.exit(0)
 
 class TaskTestSuite(pythia.TestSuite):
-  def __init__(self):
-    pythia.TestSuite.__init__(self, '/tmp/work/input/data.csv')
+    def __init__(self):
+        pythia.TestSuite.__init__(self, '/tmp/work/input/data.csv')
 
-  def studentCode(self, data):
-    return q1.simplify(data)
+    def studentCode(self, data):
+        return q1.simplify(data)
 
-  def parseTestData(self, data):
-    return int(data[0])
+    def parseTestData(self, data):
+        return int(data[0])
 
 TaskTestSuite().run('/tmp/work/output', 'data.res')
