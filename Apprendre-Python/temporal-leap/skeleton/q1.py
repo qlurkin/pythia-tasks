@@ -2,10 +2,19 @@
 # Course: Apprendre Python
 # Problem: Temporal leap
 
+import sys
+
+sys.path.append('/task/static')
+from lib import pythia
+
 def computeend(hour, minute, second, duration):
 @    @f1@@
-    if 'endhour' not in locals() or 'endminute' not in locals():
-        raise pythia.UndeclaredException('undeclared')
-    elif type(endhour) != int or type(endminute) != int:
-        raise pythia.BadTypeException('badtype')
+    if 'endhour' not in locals():
+        raise pythia.UndeclaredException('endhour')
+    if 'endminute' not in locals():
+        raise pythia.UndeclaredException('endminute')
+    if type(endhour) != int:
+        raise pythia.BadTypeException('endhour', type(endhour), int)
+    if type(endminute) != int:
+        raise pythia.BadTypeException('endminute', type(endminute), int)
     return (endhour, endminute)
