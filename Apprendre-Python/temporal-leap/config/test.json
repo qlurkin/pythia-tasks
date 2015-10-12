@@ -1,0 +1,9 @@
+{
+  "argc": 4,
+  "predefined": [],
+  "random": {
+    "n": 5,
+    "args": ["int(1,16)", "int(1,59)", "int(1,59)", "int(1,180)"]
+  },
+  "code": "def computeend(hour, minute, second, duration):\n    endminute = minute + (duration % 60)\n    endhour = hour + (duration // 60) + (endminute // 60)\n    return (endhour, endminute % 60)"
+}
