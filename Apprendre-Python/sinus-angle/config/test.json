@@ -1,9 +1,9 @@
 {
   "argc": 2,
   "predefined": [{
-    "data": "(0, 0)",
+    "data": "(0, 90)",
     "feedback": {
-      "*": "Have you converted your angle into radians?"
+      "0.8939966636005579": "Have you converted your angle into radians?"
     }
   }],
   "random": {
