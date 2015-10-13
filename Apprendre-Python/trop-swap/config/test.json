@@ -1,0 +1,16 @@
+{
+  "argc": 2,
+  "predefined": [{
+    "data": "(1, 2)",
+    "feedback": {
+      "(1, 2)": "Vous n'avez pas échangé les valeurs des deux variables.",
+      "(2, 2)": "Vous devriez sauvegarder la valeur de la variable <code>x</code> avant de la modifier.",
+      "(1, 1)": "Vous devriez sauvegarder la valeur de la variable <code>y</code> avant de la modifier."
+    }
+  }],
+  "random": {
+    "n": 5,
+    "args": ["int(1,100)", "int(1,100)"]
+  },
+  "code": "def swap(x, y):\n    z = x\n    x = y\n    y = z\n    return (x, y)"
+}
