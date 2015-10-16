@@ -1,0 +1,14 @@
+{
+  "argc": 2,
+  "predefined": [{
+    "data": "(10.5, 20)",
+    "feedback": {
+      "220.5": "Attention, le taux de taxation est donné comme un nombre entier."
+    }
+  }],
+  "random": {
+    "n": 5,
+    "args": ["float(1,1000)", "int(1,100)"]
+  },
+  "code": "def taxincluded(price, rate):\n    return price * (1 + rate / 100)"
+}
