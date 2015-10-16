@@ -1,0 +1,9 @@
+{
+  "argc": 1,
+  "predefined": [],
+  "random": {
+    "n": 5,
+    "args": ["str(1,100)"]
+  },
+  "code": "def nbletters(word):\n    return len(set(word))"
+}
