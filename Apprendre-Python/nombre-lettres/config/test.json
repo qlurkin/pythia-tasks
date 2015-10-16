@@ -1,6 +1,11 @@
 {
   "argc": 1,
-  "predefined": [],
+  "predefined": [{
+    "data": "('aaaaa',)",
+    "feedback": {
+      "5": "Vous devez compter les lettres <b>distinctes</b> dans la chaine de caractères. Votre code aurait dû renvoyer 1 lorsque <code>word</code> vaut <code>aaaaa</code>."
+    }
+  }],
   "random": {
     "n": 5,
     "args": ["str(1,100)"]
