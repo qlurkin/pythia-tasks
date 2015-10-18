@@ -5,6 +5,11 @@
     "feedback": {
       "220.5": "Attention, le taux de taxation est donné comme un nombre entier."
     }
+  }, {
+    "data": "(100, 10)",
+    "feedback": {
+      "110": "Attention, votre résultat doit être un <code>float</code>"
+    }
   }],
   "random": {
     "n": 5,
