@@ -1,0 +1,24 @@
+{
+  "argc": 3,
+  "predefined": [{
+    "data": "(20,2,100)",
+    "feedback": {
+      "False": "Attention, vous devriez pouvoir acheter deux articles à 20 euros/pièce si vous avez 100 euros."
+    }
+  }, {
+    "data": "(10,1,10)",
+    "feedback": {
+      "False": "Attention, vous devriez pouvoir acheter un article à 10 euros/pièce si vous avez 10 euros."
+    }
+  }, {
+    "data": "(10,2,15)",
+    "feedback": {
+      "True": "Attention, vous ne devriez pas pouvoir acheter deux articles à 10 euros/pièce si vous avez 15 euros."
+    }
+  }],
+  "random": {
+    "n": 5,
+    "args": ["int(1,100)", "int(1,10)", "int(1,1000)"]
+  },
+  "code": "def canbuy(unitprice, quantity, money):\n    return unitprice * quantity <= money"
+}
