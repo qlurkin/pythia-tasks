@@ -1,0 +1,24 @@
+{
+  "argc": 1,
+  "predefined": [{
+    "data": "(120,)",
+    "feedback": {
+      "False": "Attention, un client qui fait exactement 1m20 doit être refusé."
+    }
+  }, {
+    "data": "(180,)",
+    "feedback": {
+      "True": "Attention, un client qui fait exactement 1m80 doit être accepté."
+    }
+  }, {
+    "data": "(200,)",
+    "feedback": {
+      "False": "Attention, un client qui fait 1m95 doit être refusé."
+    }
+  }],
+  "random": {
+    "n": 10,
+    "args": ["int(30,200)"]
+  },
+  "code": "def isforbidden(height):\n    return height < 120 or height > 180"
+}
