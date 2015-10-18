@@ -1,0 +1,17 @@
+{
+  "argc": 2,
+  "predefined": [{
+    "data": "(1, 1)"
+  }, {
+    "data": "(3, 5)"
+  }, {
+    "data": "(1, 2)"
+  }, {
+    "data": "(2, 1)"
+  }],
+  "random": {
+    "n": 5,
+    "args": ["int(1,100)", "int(1,100)"]
+  },
+  "code": "def toursnumber(A, B):\n    (x, y) = (A, B)\n    if x == 0:\n        return y\n    while y != 0:\n        if x > y:\n            x -= y\n        else:\n            y -= x\n    gcd = A * B // x\n    return (gcd // A, gcd // B)"
+}
