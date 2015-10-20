@@ -1,0 +1,17 @@
+{
+  "argc": 1,
+  "predefined": [{
+    "data": "(0,)"
+  }, {
+    "data": "(1,)"
+  }, {
+    "data": "(2,)"
+  }, {
+    "data": "(5,)"
+  }],
+  "random": {
+    "n": 5,
+    "args": ["int(1,500)"]
+  },
+  "code": "def div2and3(n):\n    return {x for x in range(n) if x % 2 == 0 and x % 3 == 0}"
+}
