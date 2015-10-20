@@ -1,0 +1,25 @@
+{
+  "argc": 3,
+  "predefined": [{
+    "data": "(\"int\",42)",
+    "feedback": {
+      "True": "Le nombre entier 42 n'est pas de type <code>bool</code>, mais de type <code>int</code>."
+    }
+  }, {
+    "data": "(\"float\",7.9)",
+    "feedback": {
+      "True": "Le nombre flottant 7.9 n'est pas de type <code>bool</code>, mais de type <code>float</code>."
+    }
+  }, {
+    "data": "(\"str\",\"Hello\")",
+    "feedback": {
+      "True": "La chaine de caractères <code>Hello</code> n'est pas de type <code>bool</code>, mais de type <code>str</code>."
+    }
+  }, {
+    "data": "(\"bool\",\"True\")",
+    "feedback": {
+      "False": "Le booléen <code>True</code> est de type <code>bool</code>."
+    }
+  }],
+  "code": "def isbool(x):\n    return type(x) == bool"
+}
