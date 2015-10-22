@@ -1,0 +1,13 @@
+{
+  "argc": 1,
+  "predefined": [{
+    "data": "({1},)"
+  }, {
+    "data": "({1, -1},)"
+  }],
+  "random": {
+    "n": 5,
+    "args": ["set(1,100)[int(1,100)]"]
+  },
+  "code": "def setsum(S):\n    result = 0\n    for elem in S:\n        result += elem\n    return result"
+}
