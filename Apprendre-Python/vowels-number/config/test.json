@@ -1,0 +1,26 @@
+{
+  "argc": 1,
+  "predefined": [{
+    "data": "('',)",
+    "feedback": {
+      "*": "Une chaine de caractères vide ne contient aucune voyelle."
+    }
+  }, {
+    "data": "('aeiouy',)",
+    "feedback": {
+      "*": "Vous n'avez pas pris en compte les 6 voyelles possibles."
+    }
+  }, {
+    "data": "('aaaaa',)",
+    "feedback": {
+      "1": "Vous devez compter le nombre total de voyelles (même les doublons)."
+    }
+  }, {
+    "data": "('hello',)"
+  }],
+  "random": {
+    "n": 5,
+    "args": ["str(1,50)"]
+  },
+  "code": "def nbvowels(word):\n    vowels = set('aeiouy')\n    count = 0\n    for c in word:\n        if c in vowels:\n            count += 1\n    return count"
+}
