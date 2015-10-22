@@ -28,6 +28,12 @@ class TaskFeedbackSuite(pythia.FeedbackSuite):
     def parseTestData(self, data):
         return (float(data[0]), int(data[1]))
 
+    def isclose(self, a, b, rel_tol=1e-09, abs_tol=0.0):
+        return abs(a - b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
+
+    def compare(self, expected, actual):
+        return self.isclose(expected, float(actual))
+
 # Retrieve task id
 with open('/tmp/work/tid', 'r', encoding='utf-8') as file:
     tid = file.read()

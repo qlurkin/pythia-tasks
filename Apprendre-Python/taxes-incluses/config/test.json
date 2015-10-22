@@ -3,7 +3,7 @@
   "predefined": [{
     "data": "(10.5, 20)",
     "feedback": {
-      "220.5": "Attention, le taux de taxation est donné comme un nombre entier."
+      "220.5": "Attention, le taux de taxation est donné comme un nombre entier (pour un taux de 10%, <code>rate</code> vaut 10 et pas 0.10)."
     }
   }, {
     "data": "(100, 10)",
