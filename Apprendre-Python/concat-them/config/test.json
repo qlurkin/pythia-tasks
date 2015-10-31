@@ -1,0 +1,15 @@
+{
+  "argc": 3,
+  "predefined": [{
+    "data": "(2, 25, 59)",
+    "feedback": {
+      "2h25": "Do not forget to include the seconds in your result.",
+      "02h25 (59s)": "You do not have to add 0 in front of single digits."
+    }
+  }],
+  "random": {
+    "n": 5,
+    "args": ["int(1,24)", "int(1,59)", "int(1,59)"]
+  },
+  "code": "def concat(hour, minute, second):\n    return str(hour) + ':' + str(minute) + ':' + str(second)"
+}
