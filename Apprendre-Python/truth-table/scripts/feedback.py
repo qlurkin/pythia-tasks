@@ -26,7 +26,7 @@ class TaskFeedbackSuite(pythia.FeedbackSuite):
         return truthvalue(*data)
 
     def parseTestData(self, data):
-        return tuple(True if x == 'True' else False for x in data)
+        return tuple(x == 'True' for x in data)
 
 # Retrieve task id
 with open('/tmp/work/tid', 'r', encoding='utf-8') as file:

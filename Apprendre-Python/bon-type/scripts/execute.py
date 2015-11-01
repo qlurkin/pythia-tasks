@@ -34,7 +34,7 @@ class TaskTestSuite(pythia.TestSuite):
         elif data[0] == 'float':
             return float(data[1])
         elif data[0] == 'bool':
-            return bool(data[1])
+            return data[1] == 'True'
         else:
             return data[1]
 

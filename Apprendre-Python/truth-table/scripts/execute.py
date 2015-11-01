@@ -29,6 +29,6 @@ class TaskTestSuite(pythia.TestSuite):
         return q1.truthvalue(*data)
 
     def parseTestData(self, data):
-        return tuple(True if x == 'True' else False for x in data)
+        return tuple(x == 'True' for x in data)
 
 TaskTestSuite().run('/tmp/work/output', 'data.res')
