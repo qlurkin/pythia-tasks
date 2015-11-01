@@ -1,0 +1,35 @@
+{
+  "argc": 3,
+  "predefined": [{
+    "data": "(\"int\",11)",
+    "feedback": {
+      "True": "Le nombre entier 11 n'est pas un type."
+    }
+  }, {
+    "data": "(\"float\",-2.6)",
+    "feedback": {
+      "True": "Le nombre flottant -2.6 n'est pas un type."
+    }
+  }, {
+    "data": "(\"str\",\"John\")",
+    "feedback": {
+      "True": "La chaine de caractères <code>John</code> n'est pas un type."
+    }
+  }, {
+    "data": "(\"bool\",\"False\")",
+    "feedback": {
+      "True": "Le booléen <code>False</code> n'est pas un type."
+    }
+  }, {
+    "data": "(\"type\",\"int\")",
+    "feedback": {
+      "False": "Le type <code>int</code> est un type de données."
+    }
+  }, {
+    "data": "(\"type\",\"bool\")",
+    "feedback": {
+      "False": "Le type <code>bool</code> est un type de données."
+    }
+  }],
+  "code": "def containstype(x):\n    return type(x) == type"
+}
