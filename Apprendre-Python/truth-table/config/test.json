@@ -1,0 +1,21 @@
+{
+  "argc": 3,
+  "predefined": [{
+    "data": "(False, False, False)"
+  }, {
+    "data": "(False, False, True)"
+  }, {
+    "data": "(False, True, False)"
+  }, {
+    "data": "(False, True, True)"
+  }, {
+    "data": "(True, False, False)"
+  }, {
+    "data": "(True, False, True)"
+  }, {
+    "data": "(True, True, False)"
+  }, {
+    "data": "(True, True, True)"
+  }],
+  "code": "def concat(hour, minute, second):\n    return str(hour) + ':' + str(minute) + ':' + str(second)"
+}
