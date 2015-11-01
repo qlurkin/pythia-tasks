@@ -48,7 +48,7 @@ with open('/tmp/work/output/preprocess.res', 'r', encoding='utf-8') as file:
     total = 0
     for line in file:
         total += int(line.rstrip().split(':')[1])
-    output['feedback']['quality'] = {'weight': 2.0 / total}
+    output['feedback']['quality'] = {'weight': 2.0 / total if total != 0 else 0}
     if total != 2:
         output['feedback']['quality']['message'] = "<p>Vous pouvez utiliser moins d'opérateurs logiques.</p>"
 
