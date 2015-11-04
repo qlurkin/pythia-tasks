@@ -1,0 +1,14 @@
+{
+  "argc": 2,
+  "predefined": [{
+  	"data": "(18, 18)",
+  	"feedback": {
+  	  "*": "La température n'est pas hors limite, votre programme ne doit rien faire."
+  	}
+  }],
+  "random": {
+    "n": 5,
+    "args": ["int(-15,35)", "int(-15,35)"]
+  },
+  "code": "def checktemp(temperature, thermostat):\n    outlimits = False\n    if temperature <= 13 or temperature >= 27:\n        outlimits = True\n        thermostat += temperature - 15"
+}
