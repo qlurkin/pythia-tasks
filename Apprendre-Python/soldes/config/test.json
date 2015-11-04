@@ -1,0 +1,9 @@
+{
+  "argc": 3,
+  "predefined": [],
+  "random": {
+    "n": 5,
+    "args": ["int(1,25)", "float(1,100)", "bool"]
+  },
+  "code": "def computeprice(quantity, unitprice, loyalty):\n    totalprice = quantity * unitprice\n    if loyalty and quantity >= 10:\n        totalprice *= 0.9\n    else:\n        totalprice *= 0.95\n    return totalprice"
+}
