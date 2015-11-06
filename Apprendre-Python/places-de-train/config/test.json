@@ -1,0 +1,39 @@
+{
+  "argc": 2,
+  "predefined": [{
+  	"data": "(6, True)",
+  	"feedback": {
+  	  "*": "Les enfants (moins de 12 ans) doivent payer 6 euros et il n'y a pas de carte de fidélité pour ces derniers."
+  	}
+  }, {
+  	"data": "(10, False)",
+  	"feedback": {
+  	  "*": "Les enfants (moins de 12 ans) doivent payer 6 euros et il n'y a pas de carte de fidélité pour ces derniers."
+  	}
+  }, {
+  	"data": "(20, False)",
+  	"feedback": {
+  	  "*": "Les adultes (entre 12 et 65 ans) doivent payer 10 euros."
+  	}
+  }, {
+  	"data": "(30, True)",
+  	"feedback": {
+  	  "*": "Les adultes (entre 12 et 65 ans) doivent payer 8 euros s'ils ont une carte de fidélité."
+  	}
+  }, {
+  	"data": "(68, False)",
+  	"feedback": {
+  	  "*": "Les seniors (plus de 65 ans) doivent payer 6 euros et il n'y a pas de carte de fidélité pour ces derniers."
+  	}
+  }, {
+  	"data": "(68, True)",
+  	"feedback": {
+  	  "*": "Les seniors (plus de 65 ans) doivent payer 6 euros et il n'y a pas de carte de fidélité pour ces derniers."
+  	}
+  }],
+  "random": {
+    "n": 5,
+    "args": ["int(6,85)", "bool"]
+  },
+  "code": "def theaterprice(age, loyalty):\n    price = 10\n    if age <= 12:\n        price = 4\n    elif age > 12 and age <= 65 and loyalty:\n        price = 8\n    elif age > 65\n        price = 6"
+}
