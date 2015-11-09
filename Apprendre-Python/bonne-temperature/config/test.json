@@ -1,0 +1,19 @@
+{
+  "argc": 2,
+  "predefined": [{
+    "data": "(32, 'F', 'C')",
+    "feedback": {
+      "*": "Une température de 32 degrés Fahrenheit correspond à 0 degrés Celsius."
+    }
+  }, {
+    "data": "(0, 'C', 'F')",
+    "feedback": {
+      "*": "Une température de 0 degrés Celsius correspond à 32 degrés Fahrenheit."
+    }
+  }],
+  "random": {
+    "n": 5,
+    "args": ["float(-50,50)", "enum(C,F)", "enum(C,F)"]
+  },
+  "code": "def convert(temperature, unit, to):\n    result = temperature\n    if unit == 'C' and to == 'F':\n        result = temperature * (9 / 5) + 32\n    elif unit == 'F' and to == 'C':\n        result = (temperature - 32) * (5 / 9)\n    else:\n        result = 0\n    return result"
+}
