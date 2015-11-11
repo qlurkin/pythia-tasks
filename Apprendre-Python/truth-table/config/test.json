@@ -17,5 +17,5 @@
   }, {
     "data": "(True, True, True)"
   }],
-  "code": "def concat(hour, minute, second):\n    return str(hour) + ':' + str(minute) + ':' + str(second)"
+  "code": "def truthvalue(a, b, c):\n    return b or (a and c)"
 }
