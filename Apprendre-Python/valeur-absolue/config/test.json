@@ -8,13 +8,13 @@
   }, {
     "data": "(5,)",
     "feedback": {
-      "-5": "Vous ne devez pas modifier le signe d'un nombre positif.",
+      "-5": "Lorsque le nombre est positif, vous ne devez rien faire.",
       "*": "Vous devez juste modifier le signe du nombre."
     }
   }, {
     "data": "(-7,)",
     "feedback": {
-      "7": "Vous devez modifier le signe d'un nombre négatif.",
+      "-7": "Lorsque le nombre est négatif, vous devez modifier son signe.",
       "*": "Vous devez juste modifier le signe du nombre."
     }
   }],
