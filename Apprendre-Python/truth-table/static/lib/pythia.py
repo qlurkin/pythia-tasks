@@ -122,6 +122,9 @@ class RandomGenerator:
         m = re.match('^int\(({0}),({0})\)$'.format(intpattern), description)
         if m is not None:
             return IntRandomGenerator(int(m.group(1)), int(m.group(2)))
+        # bool
+        if 'bool' == description:
+            return BoolRandomGenerator()
         # float(a,b)
         m = re.match('^float\(({0}),({0})\)$'.format(floatpattern), description)
         if m is not None:
@@ -130,6 +133,10 @@ class RandomGenerator:
         m = re.match('^str\(({0}),({0})\)$'.format(intpattern), description)
         if m is not None:
             return StringRandomGenerator(int(m.group(1)), int(m.group(2)))
+        # enum(list)
+        m = re.match('^enum\((.+)\)$', description)
+        if m is not None:
+            return EnumRandomGenerator(m.group(1).split(','))
         # set(a,b)[config]
         m = re.match('^set\(({0}),({0})\)\[(.+)\]$'.format(intpattern), description)
         if m is not None:
@@ -157,6 +164,15 @@ class IntRandomGenerator(RandomGenerator):
         return random.randint(self.__lowerbound, self.__upperbound)
 
 
+class BoolRandomGenerator(RandomGenerator):
+    '''Class to generate a random boolean value'''
+    def __init__(self):
+        pass
+
+    def generate(self):
+        return random.randint(0, 1) == 0
+
+
 class FloatRandomGenerator(RandomGenerator):
     '''Class to generate a random float comprised between two bounds'''
     def __init__(self, lowerbound, upperbound):
@@ -180,6 +196,15 @@ class StringRandomGenerator(RandomGenerator):
         for i in range(n):
             result += letters[random.randint(0, len(letters) - 1)]
         return result
+
+
+class EnumRandomGenerator(RandomGenerator):
+    '''Class to generate a random value from an enumeration'''
+    def __init__(self, values):
+        self.__values = values
+
+    def generate(self):
+        return self.__values[random.randint(0, len(self.__values) - 1)]
 
 
 class SetRandomGenerator(RandomGenerator):
@@ -348,6 +373,8 @@ class FeedbackSuite:
                                     message = self.__config[total]['feedback']
                                     if tokens[1] in message:
                                         feedback['message'] = message[tokens[1]]
+                                    elif '*' in message:
+                                        feedback['message'] = message['*']
                         # An exception occured
                         elif tokens[0] == 'exception':
                             verdict = False

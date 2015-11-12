@@ -73,6 +73,21 @@ def fillSkeletons(src, dest, fields):
         os.chmod(filedest, stat.S_IRWXU | stat.S_IRWXG | stat.S_IROTH)
 
 
+class Preprocessor:
+    '''Class to preprocess student's answers'''
+    def __init__(self, fields):
+        self.__fields = fields
+
+    def run(self, dest, filename):
+        result = self.preprocess(self.__fields)
+        if result != None:
+            with open('{}/{}'.format(dest, filename), 'w', encoding='utf-8') as file:
+                file.write(result)
+
+    def preprocess(self, fields):
+        return None
+
+
 def generateTestData(dest, filename, config):
     '''Generate input data for unit tests'''
     # Open destination file
@@ -118,6 +133,10 @@ class RandomGenerator:
         m = re.match('^str\(({0}),({0})\)$'.format(intpattern), description)
         if m is not None:
             return StringRandomGenerator(int(m.group(1)), int(m.group(2)))
+        # enum(list)
+        m = re.match('^enum\((.+)\)$', description)
+        if m is not None:
+            return EnumRandomGenerator(m.group(1).split(','))
         # set(a,b)[config]
         m = re.match('^set\(({0}),({0})\)\[(.+)\]$'.format(intpattern), description)
         if m is not None:
@@ -177,6 +196,15 @@ class StringRandomGenerator(RandomGenerator):
         for i in range(n):
             result += letters[random.randint(0, len(letters) - 1)]
         return result
+
+
+class EnumRandomGenerator(RandomGenerator):
+    '''Class to generate a random value from an enumeration'''
+    def __init__(self, values):
+        self.__values = values
+
+    def generate(self):
+        return self.__values[random.randint(0, len(self.__values) - 1)]
 
 
 class SetRandomGenerator(RandomGenerator):
@@ -345,6 +373,8 @@ class FeedbackSuite:
                                     message = self.__config[total]['feedback']
                                     if tokens[1] in message:
                                         feedback['message'] = message[tokens[1]]
+                                    elif '*' in message:
+                                        feedback['message'] = message['*']
                         # An exception occured
                         elif tokens[0] == 'exception':
                             verdict = False
