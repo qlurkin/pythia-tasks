@@ -3,12 +3,24 @@
   "predefined": [{
     "data": "(0,)",
     "feedback": {
-      "*": "The absolute value of 0 is 0."
+      "*": "La valeur absolue de 0 est 0."
+    }
+  }, {
+    "data": "(5,)",
+    "feedback": {
+      "-5": "Vous ne devez pas modifier le signe d'un nombre positif.",
+      "*": "Vous devez juste modifier le signe du nombre."
+    }
+  }, {
+    "data": "(-7,)",
+    "feedback": {
+      "7": "Vous devez modifier le signe d'un nombre négatif.",
+      "*": "Vous devez juste modifier le signe du nombre."
     }
   }],
   "random": {
-    "n": 5,
-    "args": ["int(-1000,1000)"]
+    "n": 20,
+    "args": ["int(-10000,10000)"]
   },
   "code": "def absval(x):\n    if x < 0:\n        x = -x\n    return x"
 }
