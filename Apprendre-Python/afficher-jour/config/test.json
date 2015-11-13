@@ -1,0 +1,19 @@
+{
+  "argc": 3,
+  "predefined": [{
+    "data": "(1, 12, 1989)",
+    "feedback": {
+      "1/12/1989": "Vous devez ajouter un zéro devant le jour lorsqu'il est inférieur à 10."
+    }
+  }, {
+    "data": "(17, 5, 2001)",
+    "feedback": {
+      "17/5/2001": "Vous devez ajouter un zéro devant le mois lorsqu'il est inférieur à 10."
+    }
+  }],
+  "random": {
+    "n": 50,
+    "args": ["int(1,31)", "int(1,12)", "int(1700,2015)"]
+  },
+  "code": "def printdate(day, month, year):\n    date = ('0' if day < 10 else '') + str(day)\n    date += '/' + ('0' if month < 10 else '') + str(month)\n    date += '/' + str(year)\n    return date"
+}
