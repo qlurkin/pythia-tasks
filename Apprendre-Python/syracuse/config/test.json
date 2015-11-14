@@ -1,0 +1,29 @@
+{
+  "argc": 1,
+  "predefined": [{
+    "data": "(1,)",
+    "feedback": {
+      "1": "Votre programme ne doit faire aucune itération lorsque <code>n</code> vaut 1, puisque le temps de vol est nul."
+    }
+  }, {
+    "data": "(2,)",
+    "feedback": {
+      "*": "La suite de Syracuse lorsque <code>n</code> vaut 2 est : \"2 1\", et le temps de vol est donc de 1."
+    }
+  }, {
+    "data": "(6,)",
+    "feedback": {
+      "*": "La suite de Syracuse lorsque <code>n</code> vaut 6 est : \"6 3 10 5 16 8 4 2 1\", et le temps de vol est donc de 8."
+    }
+  }, {
+    "data": "(7,)",
+    "feedback": {
+      "*": "La suite de Syracuse lorsque <code>n</code> vaut 7 est : \"7 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1\", et le temps de vol est donc de 16."
+    }
+  }],
+  "random": {
+    "n": 50,
+    "args": ["int(1,200)"]
+  },
+  "code": "def syracuse(n):\n    time = 0\n    while n != 1:\n        if n % 2 == 0:\n            n /= 2\n        else:\n            n = 3 * n + 1\n        time += 1\n    return time"
+}
