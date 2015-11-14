@@ -1,0 +1,24 @@
+{
+  "argc": 2,
+  "predefined": [{
+    "data": "(10,2)",
+    "feedback": {
+      "*": "Le premier nombre compris entre 1 (inclus) et 10 (inclus) qui est divisible par 2 est 2."
+    }
+  }, {
+    "data": "(10,11)",
+    "feedback": {
+      "*": "Il n'y a aucun nombre compris entre 1 (inclus) et 10 (inclus) qui est divisible par 11."
+    }
+  }, {
+    "data": "(7,7)",
+    "feedback": {
+      "*": "Le premier nombre compris entre 1 (inclus) et 7 (inclus) qui est divisible par 7 est 7."
+    }
+  }],
+  "random": {
+    "n": 50,
+    "args": ["int(1,500)", "int(2,500)"]
+  },
+  "code": "def hasdivisor(n, d):\n    divisor = True\n    i = 0\n    while i < n:\n        i += 1\n        if i % d == 0:\n            break\n    else:\n        divisor = False\n    return (i, divisor)"
+}
