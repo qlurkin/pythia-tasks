@@ -1,0 +1,19 @@
+{
+  "argc": 2,
+  "predefined": [{
+    "data": "(65,67)",
+    "feedback": {
+      "656667": "N'oubliez pas de convertir le code des caractères avec la fonction <code>chr</code>."
+    }
+  }, {
+    "data": "(65,65)",
+    "feedback": {
+      "*": "Lorsque les variables <code>start</code> et <code>end</code> ont la même valeur, votre résultat ne doit être composé que d'une seule lettre."
+    }
+  }],
+  "random": {
+    "n": 50,
+    "args": ["int(65,90)", "int(91,120)"]
+  },
+  "code": "def lettersinterval(start, end):\n    result = ''\n    i = from\n    while i <= to:\n        result += chr(i)\n        i += 1\n    return result"
+}
