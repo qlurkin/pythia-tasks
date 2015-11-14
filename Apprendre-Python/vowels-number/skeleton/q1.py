@@ -8,4 +8,4 @@ sys.path.append('/task/static')
 from lib import pythia
 
 def nbvowels(word):
-@    @f1@@
+@@f1@@

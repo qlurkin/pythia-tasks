@@ -12,4 +12,4 @@ def nbletters(word):
     if 'while' in s or 'for' in s:
         raise Exception('Vous ne pouvez pas utiliser de boucle while ou for')
     del(s)
-@    @f1@@
+@@f1@@
