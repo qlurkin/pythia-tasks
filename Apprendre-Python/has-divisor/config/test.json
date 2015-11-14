@@ -20,5 +20,5 @@
     "n": 50,
     "args": ["int(1,500)", "int(2,500)"]
   },
-  "code": "def hasdivisor(n, d):\n    divisor = True\n    i = 0\n    while i < n:\n        i += 1\n        if i % d == 0:\n            break\n    else:\n        divisor = False\n    return (i, divisor)"
+  "code": "def hasdivisor(n, d):\n    found = True\n    i = 0\n    while i < n:\n        i += 1\n        if i % d == 0:\n            break\n    else:\n        found = False\n    return (i, divisor)"
 }

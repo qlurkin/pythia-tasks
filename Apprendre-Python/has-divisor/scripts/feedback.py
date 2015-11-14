@@ -16,15 +16,15 @@ from lib import pythia
 import math
 
 def hasdivisor(n, d):
-    divisor = True
+    found = True
     i = 0
     while i < n:
         i += 1
         if i % d == 0:
             break
     else:
-        divisor = False
-    return (i, divisor)
+        found = False
+    return (i, found)
 
 class TaskFeedbackSuite(pythia.FeedbackSuite):
     def __init__(self, config):
