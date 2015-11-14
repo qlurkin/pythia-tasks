@@ -1,0 +1,19 @@
+{
+  "argc": 1,
+  "predefined": [{
+    "data": "(1,)",
+    "feedback": {
+      "*": "La somme des nombres entiers compris entre 1 et 1 (inclus) doit valoir 1."
+    }
+  }, {
+    "data": "(3,)",
+    "feedback": {
+      "*": "La somme des nombres entiers compris entre 1 et 3 (inclus) doit valoir 6, c'est-à-dire 1 + 2 + 3."
+    }
+  }],
+  "random": {
+    "n": 50,
+    "args": ["int(1,1000)"]
+  },
+  "code": "def computesum(n):\n    result = 1\n    i = 1\n    while i <= n:\n        result += i\n        i += 1\n    return result"
+}
