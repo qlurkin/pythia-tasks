@@ -2,6 +2,8 @@
   "argc": 3,
   "predefined": [{
     "data": "(1,1,10)"
+  }, {
+    "data": "(1,2,3)"
   }],
   "random": {
     "n": 20,

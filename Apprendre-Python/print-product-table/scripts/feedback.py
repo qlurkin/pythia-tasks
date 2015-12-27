@@ -20,7 +20,7 @@ def printtable(start, end, n):
     while start <= end:
         result.append('{} x {} = {}'.format(start, n, start * n))
         start += 1
-    return '\n'.join(result)
+    return ';'.join(result)
 
 class TaskFeedbackSuite(pythia.FeedbackSuite):
     def __init__(self, config):

@@ -6,4 +6,4 @@ def printmultiply(i, n):
     __data__.append('{} x {} = {}'.format(i, n, i * n))
 
 def result():
-    return '\n'.join(__data__)
+    return ';'.join(__data__)
