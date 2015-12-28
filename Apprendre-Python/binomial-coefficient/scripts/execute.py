@@ -26,12 +26,18 @@ except Exception as e:
 class TaskTestSuite(pythia.TestSuite):
     def __init__(self):
         pythia.TestSuite.__init__(self, '/tmp/work/input/data.csv')
+        self.__postprocess = open('/tmp/work/output/postprocess.res', 'w', encoding='utf-8')
 
     def studentCode(self, data):
         utils.init()
-        return (q1.binom(*data), len(utils.cache()))
+        coeff = q1.binom(*data)
+        self.__postprocess.write('{}\n'.format(len(utils.cache())))
+        return coeff
 
     def parseTestData(self, data):
         return tuple(int(x) for x in data)
+
+    def __del__(self):
+        self.__postprocess.close()
 
 TaskTestSuite().run('/tmp/work/output', 'data.res')

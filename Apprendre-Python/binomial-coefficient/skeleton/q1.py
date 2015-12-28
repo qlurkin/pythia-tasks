@@ -10,3 +10,8 @@ from utils import fact
 
 def binom(n, k):
 @    @f1@@
+    if 'coeff' not in locals():
+        raise pythia.UndeclaredException('coeff')
+    if type(coeff) != int:
+        raise pythia.BadTypeException('coeff', type(coeff), int)
+    return coeff

@@ -17,17 +17,24 @@ import math
 import utils
 
 def binom(n, k):
-    return utils.fact(n) / (utils.fact(k) * utils.fact(n - k))
+    return utils.fact(n) // (utils.fact(k) * utils.fact(n - k))
 
 class TaskFeedbackSuite(pythia.FeedbackSuite):
     def __init__(self, config):
         pythia.FeedbackSuite.__init__(self, '/tmp/work/output/stderr', None, '/tmp/work/input/data.csv', '/tmp/work/output/data.res', config)
+        self.__postprocess = open('/tmp/work/output/postprocess.fdk', 'w', encoding='utf-8')
 
     def teacherCode(self, data):
-        return (binom(*data), len(utils.cache()))
+        utils.init()
+        coeff = binom(*data)
+        self.__postprocess.write('{}\n'.format(len(utils.cache())))
+        return coeff
 
     def parseTestData(self, data):
         return tuple(int(x) for x in data)
+
+    def __del__(self):
+        self.__postprocess.close()
 
 # Retrieve task id
 with open('/tmp/work/tid', 'r', encoding='utf-8') as file:
