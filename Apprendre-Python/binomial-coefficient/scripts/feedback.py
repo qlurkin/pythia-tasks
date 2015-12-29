@@ -13,7 +13,6 @@ import sys
 sys.path.append('/task/static')
 from lib import pythia
 
-import math
 import utils
 
 def binom(n, k):
@@ -50,5 +49,27 @@ with open('/task/config/test.json', 'r', encoding='utf-8') as file:
 (verdict, feedback) = TaskFeedbackSuite(config).generate()
 output['feedback'] = feedback
 output['status'] = 'success' if verdict else 'failed'
+
+# Update score with quality constraint
+with open('/tmp/work/output/postprocess.res', 'r', encoding='utf-8') as resfile,\
+     open('/tmp/work/output/postprocess.fdk', 'r', encoding='utf-8') as fdkfile:
+    results = [int(x.strip()) for x in resfile.readlines()]
+    feedbacks = [int(x.strip()) for x in fdkfile.readlines()]
+    if len(results) == len(feedbacks):
+        nocall = 0
+        morecalls = 0
+        i = 0
+        while i < len(results):
+            if results[i] == 0:
+                nocall += 1
+            elif results[i] > feedbacks[i]:
+                morecalls += 1
+            i += 1
+        if nocall > 0:
+            output['feedback']['quality'] = {'weight': (len(results) - nocall) / len(results), 'message': '<p>Vous n\'appelez pas toujours la fonction <code>fact</code>.</p>'}
+        elif morecalls > 0:
+            output['feedback']['quality'] = {'weight': (len(results) - morecalls) / len(results), 'message': '<p>Vous calculez la factorielle de certains nombres inutilement.</p>'}
+    else:
+        output['feedback']['quality'] = {'weight': 0, 'message': '<p>Erreur lors du comptage des appels à la fonction <code>fact</code>.</p>'}
 
 print(json.dumps(output))
