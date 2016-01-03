@@ -27,7 +27,7 @@ class TaskTestSuite(pythia.TestSuite):
         pythia.TestSuite.__init__(self, '/tmp/work/input/data.csv')
 
     def studentCode(self, data):
-        find = [f for (n, f) in inspect.getmembers(q1, inspect.isfunction)]
+        find = [f for (n, f) in inspect.getmembers(q1, inspect.isfunction) if n == 'isperfect']
         if len(find) != 1:
             raise pythia.UndeclaredException('isperfect')
         if not callable(find[0]):
