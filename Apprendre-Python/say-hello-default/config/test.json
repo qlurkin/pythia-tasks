@@ -1,0 +1,17 @@
+{
+  "argc": 1,
+  "predefined": [{
+    "data": "set()"
+  }, {
+    "data": "('John Doe',)"
+  }, {
+    "data": "('Sangoku',)"
+  }, {
+    "data": "('Barak Obama',)"
+  }],
+  "random": {
+    "n": 20,
+    "args": ["str(1,10)"]
+  },
+  "code": ""
+}
