@@ -1,0 +1,15 @@
+{
+  "argc": 2,
+  "predefined": [{
+    "data": "('aceg', 'bdfh')"
+  }, {
+    "data": "('abcdef', '')"
+  }, {
+    "data": "('', 'abcdef')"
+  }],
+  "random": {
+    "n": 20,
+    "args": ["str(1,10)", "str(1,10)"]
+  },
+  "code": ""
+}
