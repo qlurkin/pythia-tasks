@@ -1,0 +1,15 @@
+{
+  "argc": 1,
+  "predefined": [{
+    "data": "('Linux',)"
+  }, {
+    "data": "('Windows',)"
+  }, {
+    "data": "('MacOSX',)"
+  }],
+  "random": {
+    "n": 20,
+    "args": ["str(1,10)"]
+  },
+  "code": ""
+}
