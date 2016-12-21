@@ -1,0 +1,11 @@
+{
+  "argc": 1,
+  "predefined": [{
+    "data": "(0,)"
+  }],
+  "random": {
+    "n": 20,
+    "args": ["int(1,10)"]
+  },
+  "code": ""
+}
