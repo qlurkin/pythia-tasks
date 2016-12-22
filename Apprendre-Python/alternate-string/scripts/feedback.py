@@ -10,11 +10,11 @@ import sys
 sys.path.append('/task/static')
 from lib import pythia
 
-def alternate(str):
+def alternate(str1, str2):
+    length = min(len(str1), len(str2))
     res = ""
-    for l in str:
-        if l not in 'aiueoAIUEO':
-            res += l
+    for i in range(length):
+        res+= str1[i] + str2[i]
     return res
 
 class TaskFeedbackSuite(pythia.FeedbackSuite):
